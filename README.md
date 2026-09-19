@@ -82,38 +82,5 @@ Send different types of content directly through conversations:
 
 - Cloudinary
 
-### Development Tools
-
-- Git
-- GitHub
-- VS Code
-- Postman
-- npm
-
 ---
 
-## 🏗️ Architecture
-
-```text
-                    ┌──────────────────┐
-                    │     NexCHAT      │
-                    │     Frontend     │
-                    │    React.js      │
-                    └────────┬─────────┘
-                             │
-                    HTTP / WebSocket
-                             │
-                             ▼
-                    ┌──────────────────┐
-                    │     Backend      │
-                    │ Node + Express   │
-                    │    Socket.io     │
-                    └───────┬───┬──────┘
-                            │   │
-                 ┌──────────┘   └──────────┐
-                 ▼                         ▼
-        ┌────────────────┐        ┌────────────────┐
-        │    MongoDB     │        │   Cloudinary   │
-        │ Users / Chats  │        │ Media / Files  │
-        │ Messages       │        │                │
-        └────────────────┘        └────────────────┘
