@@ -1,0 +1,194 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-heading: 'Outfit', sans-serif;
+  }
+
+  body {
+    font-family: var(--font-sans);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(156, 163, 175, 0.4);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(156, 163, 175, 0.7);
+}
+
+/* Themes variables */
+html.theme-light {
+  --bg-primary: #f8fafc;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #f1f5f9;
+  --border-color: #e2e8f0;
+  --text-primary: #0f172a;
+  --text-secondary: #64748b;
+  --accent: #4f46e5;
+  --accent-hover: #4338ca;
+}
+
+html.theme-dark {
+  --bg-primary: #0f172a;
+  --bg-secondary: #1e293b;
+  --bg-tertiary: #334155;
+  --border-color: #334155;
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --accent: #6366f1;
+  --accent-hover: #4f46e5;
+}
+
+html.theme-midnight {
+  --bg-primary: #090d16;
+  --bg-secondary: #111827;
+  --bg-tertiary: #1f2937;
+  --border-color: #1f2937;
+  --text-primary: #f9fafb;
+  --text-secondary: #9ca3af;
+  --accent: #8b5cf6;
+  --accent-hover: #7c3aed;
+}
+
+html.theme-ocean {
+  --bg-primary: #0a192f;
+  --bg-secondary: #112240;
+  --bg-tertiary: #233554;
+  --border-color: #233554;
+  --text-primary: #ccd6f6;
+  --text-secondary: #8892b0;
+  --accent: #0ea5e9;
+  --accent-hover: #0284c7;
+}
+
+html.theme-sunset {
+  --bg-primary: #1c1018;
+  --bg-secondary: #2b1825;
+  --bg-tertiary: #3f2337;
+  --border-color: #4a2840;
+  --text-primary: #fce7f3;
+  --text-secondary: #f472b6;
+  --accent: #f43f5e;
+  --accent-hover: #e11d48;
+}
+
+html.theme-forest {
+  --bg-primary: #061e14;
+  --bg-secondary: #0c2d1f;
+  --bg-tertiary: #16402d;
+  --border-color: #1b4d36;
+  --text-primary: #ecfdf5;
+  --text-secondary: #6ee7b7;
+  --accent: #10b981;
+  --accent-hover: #059669;
+}
+
+html.theme-lavender {
+  --bg-primary: #faf5ff;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #f3e8ff;
+  --border-color: #e9d5ff;
+  --text-primary: #3b0764;
+  --text-secondary: #7e22ce;
+  --accent: #9333ea;
+  --accent-hover: #7e22ce;
+}
+
+/* Theme Dark Mode Overrides */
+html.theme-midnight.dark {
+  --bg-dark-base: #090d16;
+  --bg-dark-surface: #111827;
+  --bg-dark-border: #1f2937;
+}
+
+html.theme-ocean.dark {
+  --bg-dark-base: #0a192f;
+  --bg-dark-surface: #112240;
+  --bg-dark-border: #1e3a5f;
+}
+
+html.theme-sunset.dark {
+  --bg-dark-base: #1c1018;
+  --bg-dark-surface: #2b1825;
+  --bg-dark-border: #4a2840;
+}
+
+html.theme-forest.dark {
+  --bg-dark-base: #061e14;
+  --bg-dark-surface: #0c2d1f;
+  --bg-dark-border: #1b4d36;
+}
+
+html.theme-midnight.dark .dark\:bg-neutral-950,
+html.theme-ocean.dark .dark\:bg-neutral-950,
+html.theme-sunset.dark .dark\:bg-neutral-950,
+html.theme-forest.dark .dark\:bg-neutral-950 {
+  background-color: var(--bg-dark-base) !important;
+}
+
+html.theme-midnight.dark .dark\:bg-neutral-900,
+html.theme-ocean.dark .dark\:bg-neutral-900,
+html.theme-sunset.dark .dark\:bg-neutral-900,
+html.theme-forest.dark .dark\:bg-neutral-900 {
+  background-color: var(--bg-dark-surface) !important;
+}
+
+html.theme-midnight.dark .dark\:border-neutral-800,
+html.theme-ocean.dark .dark\:border-neutral-800,
+html.theme-sunset.dark .dark\:border-neutral-800,
+html.theme-forest.dark .dark\:border-neutral-800 {
+  border-color: var(--bg-dark-border) !important;
+}
+
+/* Chat Background Patterns */
+.bg-pattern-default {
+  background-color: var(--bg-primary);
+}
+
+.bg-pattern-doodle {
+  background-color: var(--bg-primary);
+  background-image: radial-gradient(rgba(99, 102, 241, 0.15) 1px, transparent 0), radial-gradient(rgba(99, 102, 241, 0.15) 1px, var(--bg-primary) 0);
+  background-size: 24px 24px;
+  background-position: 0 0, 12px 12px;
+}
+
+.bg-pattern-dots {
+  background-color: var(--bg-primary);
+  background-image: radial-gradient(rgba(148, 163, 184, 0.25) 1.5px, transparent 1.5px);
+  background-size: 18px 18px;
+}
+
+.bg-pattern-gradient {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.08) 0%, rgba(236, 72, 153, 0.08) 100%), var(--bg-primary);
+}
+
+.bg-pattern-stars {
+  background-color: #0b0f19;
+  background-image: radial-gradient(#ffffff 0.75px, transparent 0.75px), radial-gradient(#818cf8 0.5px, #0b0f19 0.5px);
+  background-size: 32px 32px;
+  background-position: 0 0, 16px 16px;
+}
+
+.bg-pattern-grid {
+  background-color: var(--bg-primary);
+  background-image: linear-gradient(rgba(148, 163, 184, 0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 163, 184, 0.12) 1px, transparent 1px);
+  background-size: 20px 20px;
+}

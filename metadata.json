@@ -1,0 +1,6 @@
+{
+  "name": "MERN Real-Time Chat & Video",
+  "description": "Full-stack real-time messaging, audio/video calling, contact requests, media sharing, and 24h stories built on the MERN stack with Socket.io and WebRTC.",
+  "requestFramePermissions": ["camera", "microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

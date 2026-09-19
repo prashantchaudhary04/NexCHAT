@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MERN Real-Time Chat & Video</title>
+    <meta name="description" content="Full-stack real-time messaging, audio/video calling, contact requests, media sharing, and 24h stories built on the MERN stack with Socket.io and WebRTC." />
+    <meta property="og:title" content="MERN Real-Time Chat & Video" />
+    <meta property="og:description" content="Full-stack real-time messaging, audio/video calling, contact requests, media sharing, and 24h stories built on the MERN stack with Socket.io and WebRTC." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    <script>
+      (function() {
+        try {
+          var theme = localStorage.getItem('app_theme') || 'light';
+          var isDark = ['dark', 'midnight', 'ocean', 'sunset', 'forest'].indexOf(theme) !== -1;
+          var root = document.documentElement;
+          root.classList.add('theme-' + theme);
+          if (isDark) {
+            root.classList.add('dark');
+            root.style.colorScheme = 'dark';
+          } else {
+            root.classList.remove('dark');
+            root.style.colorScheme = 'light';
+          }
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body class="bg-neutral-50 dark:bg-neutral-950 text-neutral-900 dark:text-neutral-100 antialiased selection:bg-indigo-500 selection:text-white">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
